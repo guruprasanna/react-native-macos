@@ -78,16 +78,6 @@ RCT_EXPORT_MODULE()
   ];
 }
 
-- (RCTViewManagerUIBlock)uiBlockToAmendWithShadowView:(__unused RCTShadowView *)shadowView
-{
-  return nil;
-}
-
-- (RCTViewManagerUIBlock)uiBlockToAmendWithShadowViewRegistry:(__unused NSDictionary<NSNumber *, RCTShadowView *> *)shadowViewRegistry
-{
-  return nil;
-}
-
 - (void)checkLayerExists:(NSView *)view
 {
   if (!view.layer) {
