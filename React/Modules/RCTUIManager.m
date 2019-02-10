@@ -634,7 +634,6 @@ static NSDictionary *deviceOrientationEventBody()
 
         // Animate view update
         [updatingLayoutAnimation performAnimations:^{
-          [[view animator] setFrame:frame];
           [view reactSetFrame:frame];
           if (updateBlock) {
             updateBlock(self, viewRegistry);
@@ -642,11 +641,9 @@ static NSDictionary *deviceOrientationEventBody()
         } withCompletionBlock:completion];
 
       } else {
-        // Workaround for https://github.com/ptmt/react-native-macos/issues/47
-        // Need to speedup layout or make a cancelling mechanism
-        if (!view.isReactRootView) {
-          [view reactSetFrame:frame];
-        }
+
+        // Update without animation
+        [view reactSetFrame:frame];
         if (updateBlock) {
           updateBlock(self, viewRegistry);
         }
