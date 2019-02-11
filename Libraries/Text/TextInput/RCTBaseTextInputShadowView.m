@@ -110,8 +110,8 @@
   }
   _needsUpdateView = NO;
 
-  UIEdgeInsets borderInsets = self.borderAsInsets;
-  UIEdgeInsets paddingInsets = self.paddingAsInsets;
+  NSEdgeInsets borderInsets = self.borderAsInsets;
+  NSEdgeInsets paddingInsets = self.paddingAsInsets;
 
   RCTTextAttributes *textAttributes = [self.textAttributes copy];
 
@@ -144,7 +144,7 @@
 
   NSNumber *tag = self.reactTag;
 
-  [_bridge.uiManager addUIBlock:^(RCTUIManager *uiManager, NSDictionary<NSNumber *, UIView *> *viewRegistry) {
+  [_bridge.uiManager addUIBlock:^(RCTUIManager *uiManager, NSDictionary<NSNumber *, NSView *> *viewRegistry) {
     RCTBaseTextInputView *baseTextInputView = (RCTBaseTextInputView *)viewRegistry[tag];
     if (!baseTextInputView) {
       return;
