@@ -114,4 +114,6 @@
  */
 @property (nonatomic, assign) BOOL clipsToBounds;
 
++ (void)performWithoutAnimation:(void (^)(void))actionsWithoutAnimation;
+
 @end

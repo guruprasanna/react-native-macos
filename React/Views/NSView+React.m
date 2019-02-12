@@ -295,4 +295,15 @@ static inline CGRect NSEdgeInsetsInsetRect(CGRect rect, NSEdgeInsets insets) {
   return self;
 }
 
+#pragma mark - UIKit parity
+
++ (void)performWithoutAnimation:(void (^)(void))actionsWithoutAnimation
+{
+  [CATransaction begin];
+  [CATransaction setValue:(id)kCFBooleanTrue
+                   forKey:kCATransactionDisableActions];
+  actionsWithoutAnimation();
+  [CATransaction commit];
+}
+
 @end
