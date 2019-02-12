@@ -226,7 +226,7 @@ typedef void (^RCTApplierBlock)(NSDictionary<NSNumber *, NSView *> *viewRegistry
        absolutePosition:(CGPoint)absolutePosition NS_REQUIRES_SUPER;
 
 - (void)applyLayoutWithFrame:(CGRect)frame
-             layoutDirection:(UIUserInterfaceLayoutDirection)layoutDirection
+             layoutDirection:(NSUserInterfaceLayoutDirection)layoutDirection
       viewsWithUpdatedLayout:(NSMutableSet<RCTShadowView *> *)viewsWithUpdatedLayout
             absolutePosition:(CGPoint)absolutePosition;
 
