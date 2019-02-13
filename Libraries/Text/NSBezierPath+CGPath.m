@@ -16,12 +16,12 @@
 {
   CGPathRef path = NULL;
 
-  int numElements = self.elementCount;
+  NSInteger numElements = self.elementCount;
   if (numElements > 0) {
     CGMutablePathRef mutablePath = CGPathCreateMutable();
     BOOL didClosePath = YES;
 
-    for (int i = 0; i < numElements; i++) {
+    for (NSInteger i = 0; i < numElements; i++) {
       NSPoint p[3];
       switch ([self elementAtIndex:i associatedPoints:p]) {
         case NSMoveToBezierPathElement:
