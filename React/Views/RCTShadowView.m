@@ -333,9 +333,7 @@ static void RCTProcessMetaPropsBorder(const YGValue metaProps[META_PROP_COUNT], 
 - (NSString *)description
 {
   NSString *description = super.description;
-  description = [[description substringToIndex:description.length - 1]
-                 stringByAppendingFormat:@"; viewName: %@; reactTag: %@; frame: %f; %f;>",
-                 self.viewName, self.reactTag, self.frame.size.height, self.frame.size.width];
+  description = [[description substringToIndex:description.length - 1] stringByAppendingFormat:@"; viewName: %@; reactTag: %@; frame: %@>", self.viewName, self.reactTag, NSStringFromCGRect(self.frame)];
   return description;
 }
 
