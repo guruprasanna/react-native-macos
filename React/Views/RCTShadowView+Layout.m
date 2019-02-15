@@ -52,14 +52,6 @@
   };
 }
 
-static inline CGRect NSEdgeInsetsInsetRect(CGRect rect, NSEdgeInsets insets) {
-  rect.origin.x    += insets.left;
-  rect.origin.y    += insets.top;
-  rect.size.width  -= (insets.left + insets.right);
-  rect.size.height -= (insets.top  + insets.bottom);
-  return rect;
-}
-
 - (NSSize)availableSize
 {
   return self.layoutMetrics.contentFrame.size;
