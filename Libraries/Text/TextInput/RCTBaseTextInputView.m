@@ -279,7 +279,7 @@ static inline CGRect NSEdgeInsetsInsetRect(CGRect rect, NSEdgeInsets insets) {
   if (_predictedText) {
     _predictedText = [_predictedText stringByReplacingCharactersInRange:range withString:text];
   } else {
-    _predictedText = text;
+    _predictedText = [text copy];
   }
 
   if (_onTextInput) {
